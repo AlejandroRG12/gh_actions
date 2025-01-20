@@ -1,0 +1,33 @@
+name: Stats
+
+on:
+  push:
+    branches: [ main ]
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      # Permiso para poder hacer el commit del paso "Commit and push actuons"
+      contents: write
+        
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13.1'
+
+      - name: Run script
+        run: python ./main.py
+
+      - name: Commit and push actuons
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: mensaje automatizado
+          commit_user_name: AlejandroRG12 [Github actions]
+          commit_user_email: garcia4312@hotmail.com
+          commit_author: alejandro
