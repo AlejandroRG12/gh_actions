@@ -1,6 +1,12 @@
 name: Stats
 
 on:
+
+  # Ejemplo de como seria cada noche a las 12 se ejecute
+  #schedule:
+  #  - cron: '0 0 * * *'
+  
+  # Ejemplo de como seria cuando se haga push en la rama main
   push:
     branches: [ main ]
   
