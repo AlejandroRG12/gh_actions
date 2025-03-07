@@ -22,10 +22,13 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Setup python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.13'
+      # Ya que se corre en local la version de python no requiere volverse a intalar,
+      # solo se usara una vez. (al menos que no sea ON-PREMISE).
+      # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      #- name: Setup python
+      #  uses: actions/setup-python@v5
+      #  with:
+      #    python-version: '3.13'
 
       - name: Run script
         run: python3 ./main.py
