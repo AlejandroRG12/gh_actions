@@ -28,7 +28,7 @@ jobs:
           python-version: '3.13'
 
       - name: Run script
-        run: python ./main.py
+        run: python3 ./main.py
 
       - name: Commit and push actuons
         uses: stefanzweifel/git-auto-commit-action@v5
